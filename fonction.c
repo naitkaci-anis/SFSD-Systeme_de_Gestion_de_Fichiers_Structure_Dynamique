@@ -659,7 +659,7 @@ int reorganisation(TnOVnC* tnOVnC) {
 
                 if ((etudiant.taille == 0)) { break; }                         // car on a initialise le bloc a \0 alors si ila lue 0 donc ila lu \0\0\0
 
-                if (etudiant.taille <= (TAILLE_DE_BLOC - tailleBuf))
+                if (etudiant.taille < (TAILLE_DE_BLOC - tailleBuf))         // < et non <= : evite overflow de 1 octet du \0 final
                 {
                     ecrireEtudiant(&buf, etudiant);
 
@@ -810,7 +810,7 @@ int modifierEtudiant(TnOVnC* tnOVnC, Etudiant etudiant,int numBloc,int debutEnre
     sauvgardeFichier(tnOVnC);
 
     liredir(tnOVnC, GetHeader(tnOVnC, 1), &buf);  //lecture de dernier  bloc
-    if (TAILLE_DE_BLOC - strlen(buf.bloc) >= etudiant.taille)               // test si il y a de l'espace
+    if (TAILLE_DE_BLOC - strlen(buf.bloc) > etudiant.taille)                // > et non >= : evite overflow de 1 octet du \0 final
     {
         ecrireEtudiant(&buf, etudiant);
         ecriredir(tnOVnC, GetHeader(tnOVnC, 1), buf);
