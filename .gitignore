@@ -1,0 +1,16 @@
+# Compilé
+*.exe
+*.o
+
+# Fichiers générés à l'exécution
+Default_File
+FAQ
+*_Ordonne
+
+# Fichiers de test personnels
+test*
+anis
+txt
+
+# Erreurs de compilation (bat)
+erreurs.txt

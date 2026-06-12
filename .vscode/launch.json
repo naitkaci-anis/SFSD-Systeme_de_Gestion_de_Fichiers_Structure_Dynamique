@@ -1,0 +1,44 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Lancer sfsd",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/sfsd.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gdb.exe",
+      "preLaunchTask": "Compiler le projet",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/DELL/Desktop/sfsd",
+      "program": "c:/Users/DELL/Desktop/sfsd/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gdb.exe",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

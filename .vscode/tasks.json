@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compiler le projet",
+            "type": "shell",
+            "command": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-std=c99",
+                "${workspaceFolder}/main.c",
+                "${workspaceFolder}/fonction.c",
+                "-o",
+                "${workspaceFolder}/sfsd.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": "build"
+        },
+        {
+            "label": "Compiler et Lancer",
+            "type": "shell",
+            "command": "Start-Process -FilePath '${workspaceFolder}/sfsd.exe' -WorkingDirectory '${workspaceFolder}'",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "powershell.exe",
+                    "args": ["-Command"]
+                }
+            },
+            "dependsOn": "Compiler le projet",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
